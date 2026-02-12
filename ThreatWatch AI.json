@@ -106,7 +106,7 @@
       "name": "05_LLM_Risk_Assessment",
       "credentials": {
         "openAiApi": {
-          "id": "BMqfoIIVcf5q8Nu0",
+          "id": "",
           "name": "OpenAi account"
         }
       }
@@ -241,7 +241,7 @@
     },
     {
       "parameters": {
-        "sendTo": "royalsj2346@gmail.com",
+        "sendTo": "example@mail.com",
         "subject": "={{ $json.final_payload.email_type === 'ESCALATION' ? '⚠️ MANUAL REVIEW REQUIRED' : '🚨' }} [{{ $json.final_payload.risk_level }}] Security Alert - {{ $json.final_payload.alert_id }}",
         "emailType": "text",
         "message": "=🚨 SECURITY ALERT - {{ $json.final_payload.risk_level }}\n═══════════════════════════════════════════\n\n📋 INCIDENT DETAILS\n───────────────────────────────────────────\nAlert ID:        {{ $json.final_payload.alert_id }}\nTimestamp:       {{ $json.final_payload.timestamp }}\nRisk Level:      {{ $json.final_payload.risk_level }}\nRisk Score:      {{ $json.final_payload.risk_score }}/100\nIncident Type:   {{ $json.final_payload.incident_type }}\nConfidence:      {{ $json.final_payload.confidence * 100 }}%\n\n📝 SUMMARY\n───────────────────────────────────────────\n{{ $json.final_payload.summary }}\n\n⚠️ RECOMMENDED ACTIONS\n───────────────────────────────────────────\n1. Review incident details immediately\n2. Verify affected systems and accounts\n3. Initiate containment if confirmed\n4. Update incident tracking system\n\n═══════════════════════════════════════════\nThis is an automated alert. Response required within 30 minutes.",
